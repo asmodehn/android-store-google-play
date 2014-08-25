@@ -583,6 +583,16 @@ public class GoogleIabHelper extends IabHelper {
                     inv.addPurchase(purchase);
                 }
                 else {
+                    //Code to Clean up test items BEGIN
+                    //Comment this when using production items.
+                    //IabPurchase p = new IabPurchase(itemType, purchaseData, signature);
+                    //try {
+                    //    consume(p);
+                    //} catch (IabException e) {
+                    //    e.printStackTrace();
+                    //}
+                    //Code to Clean up test items END
+
                     SoomlaUtils.LogWarning(TAG, "IabPurchase signature verification **FAILED**. Not adding item.");
                     SoomlaUtils.LogDebug(TAG, "   IabPurchase data: " + purchaseData);
                     SoomlaUtils.LogDebug(TAG, "   Signature: " + signature);
