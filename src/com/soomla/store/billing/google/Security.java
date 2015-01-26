@@ -62,7 +62,7 @@ public class Security {
                 Log.e(TAG, "Allowing empty signatures ...");
                 return true;
             }
-            return false;
+            return BuildConfig.DEBUG; //will skip signature check in debug mode
         }
 
         PublicKey key = Security.generatePublicKey(base64PublicKey);
